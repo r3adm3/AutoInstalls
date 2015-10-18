@@ -1,0 +1,13 @@
+v:\virtuals\CloneTemplate.cmd ${templateName} ${UUID} > v:\virtuals\${UUID}.log
+
+vboxmanage startvm ${UUID} --type headless
+start-sleep 120
+vboxmanage guestproperty enumerate ${UUID}
+
+  set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server"-name "fDenyTSConnections" -Value 0
+  Enable-NetFirewallRule -DisplayGroup "Remote Desktop"
+  set-ItemProperty -Path "HKLM:\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp" -name "UserAuthentication" -Value 1  
+
+  rename-computer -newname ${UUID}  -force 
+  stop-computer
+  
