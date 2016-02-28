@@ -1,0 +1,5 @@
+1. Install Firefox
+2. Download backinfo
+3. Windows Update
+4. Group Policy, disable server manager on autostartup.
+5. reg key to run backinfo on each logon
