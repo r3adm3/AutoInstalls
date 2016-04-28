@@ -4,3 +4,4 @@
 4. Group Policy, disable server manager on autostartup.
 5. reg key to run backinfo on each logon
 6. install vbox helpers.
+7. Sysprep.exe /oobe /generalize /shutdown /unattend:c:\windows\system32\sysprep\unattend.xml
